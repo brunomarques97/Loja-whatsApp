@@ -394,3 +394,26 @@ a.nav-brand{
     justify-content: center;
     align-items: end;
 }
+
+/*reservas*/
+.reserva{
+    padding-top: 100px;
+    padding-top: 150px;
+}
+.card-secundary{
+    background-color: var(--color-secundary);
+    border-radius: 70px;
+    padding: 90px;
+}
+.card-reserva{
+    height: 320px;
+    width: 320px;
+    border-radius: 120px;
+    background-color: var(--color-white);
+    position: absolute;
+    right: 0;
+    top: -25px;
+}
+.reserva .img-banner img{
+    width: 100%;
+}
