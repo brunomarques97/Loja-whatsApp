@@ -10,8 +10,19 @@
     <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/fontawesome.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/animate.css'>
 </head>
 <body>
+
+    <div class="container-mensagens" id="containerMensagens">
+
+    </div>
+
+    <a class="botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+        <div class="badge-total-carrinho">0</div>
+        <i class="fa fa-shopping-bag"></i>
+    </a>
+
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-lg pl-0 pr-0">
@@ -38,8 +49,9 @@
                             <a href="#depoimento" class="nav-link"><b>Depoimentos</b></a>
                         </li>
                     </ul>
-                    <a class="btn btn-white btn-icon">
+                    <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
                             Meu carrinho <span class="icon">
+                                <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
                                 <i class="fa fa-shopping-bag"></i>
                             </span>
                     </a>
@@ -362,7 +374,7 @@
 
         <div class="m-header">
             <div class="container">
-                <a class="btn btn-white btn-sm float-right">
+                <a class="btn btn-white btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)">
                     Fechar
                 </a>
                 <div class="etapas">

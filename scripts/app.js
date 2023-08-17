@@ -105,15 +105,65 @@ cardapio.metodos = {
                     item[0].qntd = qntdAtual;
                     MEU_CARRINHO.push(item[0])
                 }
-
-                
+                cardapio.metodos.mensagem('Item adicionado ao carrinho','green');
                 $("#qntd-" + id).text(0)
+
+                cardapio.metodos.atualizarBadgeTotal();
 
             }
 
         }
 
-    }
+    },
+
+    atualizarBadgeTotal: () =>{
+
+        var total = 0;
+
+        $.each(MEU_CARRINHO,(i,e) =>{
+            total += e.qntd
+        })
+
+        if(total>0){
+            $(".botao-carrinho").removeClass('hidden');
+            $(".container-total-carrinho").removeClass('hidden')
+            
+        }else{
+            $(".botao-carrinho").addClass('hidden');
+            $(".container-total-carrinho").removeClass('hidden')
+        }
+
+        $(".badge-total-carrinho").html(total)
+
+    },
+
+    abrirCarrinho: (abrir)=>{
+
+        if(abrir==true){
+            $("#modalCarrinho").removeClass("hidden")
+        }else{
+            $("#modalCarrinho").addClass("hidden")
+        }
+    },
+
+    mensagem:(texto,cor ='red',tempo = 2500 )=>{
+
+        let id = Math.floor(Date.now()* Math.random()).toString();
+
+
+
+        let msg = `<div id="msg-${id}" class= "animated fadeInDown toast ${cor}">${texto}</div>`
+
+        $('#containerMensagens').append(msg);
+
+        setTimeout(()=>{
+            $("#msg-" + id).removeClass('fadeInDown');
+            $("#msg-" + id).addClass('fadeOutUp');
+            setTimeout(()=>{
+                $("#msg-" + id).remove();
+            },800)
+        }, tempo)
+    },
  
 }
 
