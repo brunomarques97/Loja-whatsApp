@@ -6,11 +6,12 @@
     <title>Loja</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    
-    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.min.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/fontawesome.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/animate.css'>
+
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/responsive.css'>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 
     <header>
         <div class="container">
-            <nav class="navbar navbar-expand-lg pl-0 pr-0">
+            <nav class="navbar navbar-expand-lg pl-0 pr-0 col-one" >
                 <a class="nav-brand" href="#">
                     <img src="img/logo.png" width="160" class="img-logo">
                 </a>
@@ -34,7 +35,7 @@
                         <i class="fas fa-bars"></i>
                     </span>
                 </button>
-                <div class="collapse navbar-collapse" id="#navbarNavDropdown">
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav" ml-auto mr="auto">
                         <li class="nav-item">
                             <a href="#reservas" class="nav-link"><b>Reservas</b></a>
@@ -63,7 +64,7 @@
     <section class="banner">
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one">
                     <div class="d-flex text-banner">
                         <h1><b>Escolha sua comida <b class="color-primary">favorita.</b></b></h1>
                         <p>
@@ -91,7 +92,7 @@
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
-                <div class="col-6">
+                <div class="col-6 no-mobile">
                     <div class="card-banner"></div>
                     <div class="d-flex img-banner">
                         <img src="./img/burguer.png" alt="burguer">
@@ -109,13 +110,13 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 col-one text-center mb-5">
                     <span class="hint-title"><b>Serviços</b></span>
                     <h1 class="title">
                         <b>Como são nossos serviços?</b>
                     </h1>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5">
                      <div class="card-icon text-center">
                         <img src="./img/icone-pedido.svg" width="150" alt="icone-pedido">
                      </div>
@@ -126,7 +127,7 @@
                         </span>
                      </div>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5">
                     <div class="card-icon text-center">
                         <img src="./img/icone-delivery.svg" width="250" alt="icone-delivery">
                      </div>
@@ -137,7 +138,7 @@
                         </span>
                      </div>
                 </div>
-                <div class="col-4 mb-5">
+                <div class="col-12 col-lg-4 col-md-4 col-sm-12 col-one mb-5">
                     <div class="card-icon text-center">
                         <img src="./img/icone-qualidade.svg" width="250" alt="icone-qualidade">
                      </div>
@@ -159,14 +160,14 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-12 text-center mb-5">
+                <div class="col-12 col-one text-center mb-5">
                     <span class="hint-title"><b>Cardápio</b></span>
                     <h1 class="title">
                         <b>Conheça o nosso cardápio</b>
                     </h1>
                 </div>
 
-                <div class="col-12 container-menu">
+                <div class="col-12 col-one container-menu">
                     <a id="menu-burgers" class="btn btn-white btn-sm mr-3 active" onclick="cardapio.metodos.obterItensCardapio('burgers')">
                         <i class="fas fa-hamburger"></i>&nbsp; Burgers
                     </a>
@@ -187,13 +188,13 @@
                     </a>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12 col-one">
                     <div class="row" id="itensCardapio">
                         
                     </div>
                 </div>
 
-                <div class="col-12 text-center">
+                <div class="col-12 col-one text-center">
                     <a id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()">
                         Ver mais
                     </a>
@@ -209,14 +210,14 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-5 text-center">
+                <div class="col-5 no-mobile text-center">
                     <div class="card-depoimentos"></div>
                     <div class="d-flex img-banner">
                         <img src="./img/pizzas.png" alt="pizzas">
                     </div>
                 </div>
 
-                <div class="col-7">
+                <div class="col-12 col-lg-7 col-md-7 col-sm-12 col-one">
                     <span class="hint-title"><b>Depoimentos</b></span>
                     <h1 class="title">
                         <b>o que dizem sobre nós?</b>
@@ -314,11 +315,11 @@
     <section id="reservas" class="reserva">
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 col-one">
 
                     <div class="card-secundary">
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-12 col-lg-7 col-md-7 col-sm-12 ">
                                 <span class="hint-title"><b>Reserva</b></span>
                                 <h1 class="title">
                                     <b>Quer reservar um horário?</b>
@@ -332,7 +333,7 @@
                                     Fazer reserva
                                 </a>
                             </div>
-                            <div class="col-5">
+                            <div class="col-5 no-mobile">
                                 <div class="card-reserva"></div>
                                 <div class="d-flex img-banner">
                                     <img src="./img/icone-reserva.svg" alt="icone-reserva">
@@ -350,17 +351,17 @@
         <div class="container">
             <div class="row">
                 
-                <div class="col-3 container-logo-footer">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 col-one container-logo-footer">
                     <img class="logo-footer" src="./img/logo.png" alt="logo">
                 </div>
 
-                <div class="col-6 container-texto-footer">
+                <div class="col-12 col-lg-6 col-md-6 col-sm-12 col-one container-texto-footer">
                     <p class="mb-0">
                         <b>Menu Online</b> &copy; Todos os direitos reservados
                     </p>
                 </div>
 
-                <div class="col-3 container-redes-footer">
+                <div class="col-12 col-lg-3 col-md-3 col-sm-12 col-one container-redes-footer">
                     <a class="btn btn-sm btn-white btn-social mr-3">
                         <i class="fab fa-instagram"></i>
                     </a>
