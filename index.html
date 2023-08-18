@@ -400,7 +400,9 @@
                         <div class="form-group container-cep">
                             <label >Cep:</label>
                             <input id="txtCEP" type="text" class="form-control"/>
-                            <a class="btn btn-yellow btn-sm"><i class="fa fa-search"></i></a>
+                            <a class="btn btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()">
+                                <i class="fa fa-search"></i>
+                            </a>
                         </div>
                     </div>
                     <div class="col-8"></div>
@@ -443,7 +445,7 @@
                     <div class="col-2">
                         <div form-group>
                             <label>UF:</label>
-                            <label id="ddlUF" class="form-control">RS</label>
+                            <input id="ddlUF" type="text" class="form-control">
                         </div>
                     </div>
 
@@ -520,10 +522,10 @@
                     </p>
                 </div>
 
-                <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
+                <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
                     Continuar
                 </a>
-                <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
                     Revisar pedido
                 </a>
                 <a class="btn btn-yellow float-right hidden" id="btnEtapaResumo">
