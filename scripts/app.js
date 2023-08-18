@@ -406,6 +406,29 @@ cardapio.metodos = {
         }
 
         cardapio.metodos.carregarEtapa(3);
+        cardapio.metodos.carregarResumo();
+    },
+
+    carregarResumo:()=>{
+
+        $("#listaItensResumo").html('');
+
+        $.each(MEU_CARRINHO,(i,e)=>{
+
+            let temp = cardapio.templates.itemResumo
+                .replace(/\${img}/g, e.img)
+                .replace(/\${name}/g, e.name)
+                .replace(/\${price}/g, e.price.toFixed(2))
+                .replace(/\${qntd}/g, e.qntd)
+
+                $("#listaItensResumo").append(temp)
+
+        });
+
+        $("#resumoEndereco").html(`${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`);
+        $("#cidadeEndereco").html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`);
+
+
     },
 
 
@@ -471,6 +494,26 @@ cardapio.templates = {
                 <span class="btn btn-remove" onclick="cardapio.metodos.removerCarrinho('\${id}')"><i class="fa fa-times"></i></span>
             </div>
         </div>
+`,
+
+itemResumo:`
+    <div class="col-12 item-carrinho resumo">
+        <div class="img-produto-resumo">
+            <img src="\${img}">
+        </div>
+        <div class="dados-produto">
+            <p class="title-produto-resumo"> 
+                <b>\${name}</b>
+            </p>
+            <p class="price-produto-resumo"> 
+                <b>\${price}</b>
+            </p>
+        </div>
+        <p class="quantidade-produto-resumo">
+            x <b>\${qntd}</b>
+        </p>
+    </div>
+
 `
 
 }
