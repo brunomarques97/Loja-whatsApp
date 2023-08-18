@@ -567,7 +567,7 @@ cardapio.templates = {
                 <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"><i class="fas fa-minus"></i></span>
                 <span class="add-numero-items" id="qntd-carrinho-\${id}"> \${qntd}</span>
                 <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></span>
-                <span class="btn btn-remove" onclick="cardapio.metodos.removerCarrinho('\${id}')"><i class="fa fa-times"></i></span>
+                <span class="btn btn-remove no-mobile" onclick="cardapio.metodos.removerCarrinho('\${id}')"><i class="fa fa-times"></i></span>
             </div>
         </div>
 `,

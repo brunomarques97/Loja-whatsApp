@@ -71,7 +71,7 @@
                             Aproveita nosso cardápio! Escolha o que desejar e recebe em sua casa de forma rápida e segura.
                         </p>
                         <div>
-                            <a class="btn btn-yellow mt-4 mr-3" href="#">
+                            <a class="btn btn-yellow mt-4 mr-3" href="#cardapio">
                                 Ver cardápio
                             </a>
                             <a href="#" class="btn btn-white btn-icon-left mt-4" id="btnLigar">
@@ -402,7 +402,8 @@
                 </div>
 
                 <div id="localEntrega" class="row mr-0 ml-0 hidden">
-                    <div class="col-4">
+
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12 ">
                         <div class="form-group container-cep">
                             <label >Cep:</label>
                             <input id="txtCEP" type="text" class="form-control"/>
@@ -411,44 +412,45 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-8"></div>
 
-                    <div class="col-6">
+                    <div class="col-8 no-mobile"></div>
+
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 ">
                         <div form-group>
                             <label>Endereço:</label>
                             <input id="txtEndereco" type="text" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12 ">
                         <div form-group>
                             <label>Bairro:</label>
                             <input id="txtBairro" type="text" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12 ">
                         <div form-group>
                             <label>Numero:</label>
                             <input id="txtNumero" type="text" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 ">
                         <div form-group>
                             <label>Cidade:</label>
                             <input id="txtCidade" type="text" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-4">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12 ">
                         <div form-group>
                             <label>Complemento:</label>
                             <input id="txtComplemento" type="text" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12 ">
                         <div form-group>
                             <label>UF:</label>
                             <input id="ddlUF" type="text" class="form-control">
@@ -506,21 +508,21 @@
                         <span class="valor-total" ><b id="lbValorTotal">R$ 0,00</b></span>
                     </p>
                 </div>
+                <div class="mobile">
+                    <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
+                        Continuar
+                    </a>
+                    <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                        Revisar pedido
+                    </a>
+                    <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank">
+                        Enviar pedido
+                    </a>
 
-                <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
-                    Continuar
-                </a>
-                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
-                    Revisar pedido
-                </a>
-                <a href="#" class="btn btn-yellow float-right hidden" id="btnEtapaResumo" target="_blank">
-                    Enviar pedido
-                </a>
-
-                <a onclick="cardapio.metodos.voltaEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
-                    Voltar
-                </a>
-
+                    <a onclick="cardapio.metodos.voltaEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
+                        Voltar
+                    </a>
+                </div>
             </div>
         </div>
 
