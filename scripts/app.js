@@ -15,6 +15,8 @@ cardapio.eventos = {
 
     init: () => {
         cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.ligar();
+        cardapio.metodos.reserva();
     }
 
 }
@@ -471,6 +473,39 @@ cardapio.metodos = {
 
 
     },
+
+    reserva:()=>{
+  
+        var texto = "Ola gostaria de fazer uma *reserva*";
+
+        let encode = encodeURI(texto);
+        let url = `https://wa.me/${tel}?text=${encode}`;
+
+        $("#btnReserva").attr('href',url);
+
+    },
+
+    ligar:()=>{
+  
+        $("#btnLigar").attr('href',`tel:${tel}`);
+
+    },
+
+    depoimento:(depoimento)=>{
+  
+       $("#depoimento-1").addClass('hidden');
+       $("#depoimento-2").addClass('hidden');
+       $("#depoimento-3").addClass('hidden');
+
+       $("#btnDepoimento_1").removeClass('active');
+       $("#btnDepoimento_2").removeClass('active');
+       $("#btnDepoimento_3").removeClass('active');
+
+       $("#depoimento-" + depoimento).removeClass('hidden')
+       $("#btnDepoimento_" + depoimento).addClass('active')
+
+    },
+
 
 
     mensagem:(texto,cor ='red',tempo = 2500 )=>{
