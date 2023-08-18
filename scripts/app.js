@@ -9,6 +9,7 @@ var MEU_ENDERECO = null;
 
 var valor_CARRINHO = 0;
 var valor_ENTREGA = 5;
+var tel ='5554984496494';
 
 cardapio.eventos = {
 
@@ -427,6 +428,46 @@ cardapio.metodos = {
 
         $("#resumoEndereco").html(`${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`);
         $("#cidadeEndereco").html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`);
+
+        cardapio.metodos.pedido();
+
+    },
+
+    //mensagem whats
+    pedido:()=>{
+
+        
+
+        if(MEU_CARRINHO.length > 0 && MEU_ENDERECO != null){
+
+            var texto = "Ola tenho um pedido:";
+            texto += `\n*Itens do pedido:*\n\n\${itens}`;
+            texto += `\n*Endereço de entrega*`;
+            texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
+            texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`;
+            texto += `\n\n*Total (com entrega): R$ ${(valor_CARRINHO + valor_ENTREGA).toFixed(2)}*`;
+
+            var itens= '';
+
+            $.each(MEU_CARRINHO, (i,e)=>{
+                itens += `*${e.qntd}x* ${e.name} .......R$ ${e.price.toFixed(2)} \n`;
+
+                if((i + 1) == MEU_CARRINHO.length){
+
+                    texto = texto.replace(/\${itens}/g,itens);
+
+                    //transforma em url
+                    let encode=encodeURI(texto);
+                    let url = `https://wa.me/${tel}?text=${encode}`;
+
+                    $("#btnEtapaResumo").attr('href',url);
+    
+                }
+1            })
+
+          
+
+        }
 
 
     },
