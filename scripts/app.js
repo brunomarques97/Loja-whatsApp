@@ -9,7 +9,7 @@ var MEU_ENDERECO = null;
 
 var valor_CARRINHO = 0;
 var valor_ENTREGA = 5;
-var tel ='5554984496494';
+
 
 cardapio.eventos = {
 
@@ -358,6 +358,7 @@ cardapio.metodos = {
 
     resumoPedido:()=>{
 
+        
         let cep =$("#txtCEP").val().trim();
         let rua =$("#txtEndereco").val().trim();
         let bairro =$("#txtBairro").val().trim();
@@ -410,6 +411,7 @@ cardapio.metodos = {
 
         cardapio.metodos.carregarEtapa(3);
         cardapio.metodos.carregarResumo();
+        
     },
 
     carregarResumo:()=>{
@@ -432,7 +434,6 @@ cardapio.metodos = {
         $("#cidadeEndereco").html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`);
 
         cardapio.metodos.pedido();
-
     },
 
     //mensagem whats
@@ -442,6 +443,8 @@ cardapio.metodos = {
 
         if(MEU_CARRINHO.length > 0 && MEU_ENDERECO != null){
 
+            var tel = 55 + $("#txtTelefone").val().trim();
+            
             var texto = "Ola tenho um pedido:";
             texto += `\n*Itens do pedido:*\n\n\${itens}`;
             texto += `\n*Endereço de entrega*`;
